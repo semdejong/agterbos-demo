@@ -1,101 +1,148 @@
 /**
- * ÉÉN bestand om aan te passen per demo.
- * Kopieer de starter, vul hieronder de gegevens van de prospect in, klaar.
+ * Agterbos Hoveniers — alleen geverifieerde feiten
+ * (agterbos-hoveniers.nl, 11 nov 2026).
+ * Geen oprichtingsjaar, geen KvK/BTW, geen openingstijden, geen reviews,
+ * geen info@tuinopmaat.com, geen werkgebied buiten Oldenzaal, geen extra jaartallen.
  */
 export const content = {
-  // Slug = Vercel-project- en GitHub-reponaam (eindigt op "-demo"). Wordt door scripts/new-demo.sh gezet.
-  // Ook de "data-demo" voor de Sleads demo-analytics tracker.
   slug: "agterbos-demo",
 
   company: {
-    name: "Voorbeeldbedrijf",
-    tagline: "Vakmanschap uit de regio, sinds 1998",
+    name: "Agterbos Hoveniers",
+    shortName: "Agterbos",
+    owner: "Maurice Agterbos",
+    tagline: "Van schets tot resultaat",
     description:
-      "Wij helpen particulieren en bedrijven met betrouwbaar werk, eerlijk advies en een persoonlijke aanpak.",
-    logo: "/logo.png", // zet het logo in /public en pas het pad aan ("" = alleen tekst)
-    city: "Utrecht",
+      "Hovenier in Oldenzaal voor tuinontwerp, tuinaanleg en tuinonderhoud — particulier en zakelijk, vier seizoenen per jaar. Van schets tot resultaat.",
+    logo: "/img/logo/logo.png",
+    logoWidth: 256,
+    logoHeight: 100,
+    logoCompact: "/img/logo/logo-compact.png",
+    favicon: "/img/logo/favicon.png",
+    city: "Oldenzaal",
   },
 
-  // Huisstijlkleuren van de prospect (hex)
   colors: {
-    primary: "#1d4ed8",
+    primary: "#005133",
     primaryForeground: "#ffffff",
-    accent: "#f59e0b",
-    background: "#ffffff",
-    foreground: "#0f172a",
-    muted: "#f1f5f9",
+    accent: "#D46600",
+    background: "#F4F1EA",
+    foreground: "#222222",
+    muted: "#E7EEE8",
+    bosgroen: "#005133",
+    bosgroenText: "#003D27",
+    inkt: "#222222",
+    schetspapier: "#F4F1EA",
+    perk: "#E7EEE8",
+    wit: "#FFFFFF",
+    potlood: "#D46600",
+    potloodText: "#B34A00",
+    haarlijn: "#C5CDC6",
   },
 
   seo: {
-    title: "Voorbeeldbedrijf | Vakmanschap uit Utrecht",
-    description: "Conceptwebsite voor Voorbeeldbedrijf.",
+    title: "Agterbos Hoveniers Oldenzaal | Van schets tot resultaat",
+    description:
+      "Tuinontwerp, tuinaanleg en tuinonderhoud in Oldenzaal. Agterbos Hoveniers staat vier seizoenen voor u klaar. Bel 06-20748056.",
     lang: "nl",
   },
 
   nav: [
-    { label: "Diensten", href: "#diensten" },
-    { label: "Over ons", href: "#over-ons" },
-    { label: "Reviews", href: "#reviews" },
-    { label: "Contact", href: "#contact" },
+    {
+      label: "Diensten",
+      href: "/diensten",
+      children: [
+        { label: "Tuinontwerp", href: "/tuinontwerpen" },
+        { label: "Tuinaanleg", href: "/tuinaanleg" },
+        { label: "Tuinonderhoud", href: "/tuinonderhoud" },
+      ],
+    },
+    { label: "Over ons", href: "/over-ons" },
+    { label: "Contact", href: "/contact" },
   ],
 
   hero: {
-    title: "Vakwerk waar u op kunt bouwen",
+    title: "Van schets tot resultaat — uw hovenier in Oldenzaal.",
     subtitle:
-      "Snel geregeld, duidelijk geprijsd en netjes opgeleverd. Vraag vandaag nog vrijblijvend een offerte aan.",
-    primaryCta: { label: "Offerte aanvragen", href: "#contact" },
-    secondaryCta: { label: "Bekijk onze diensten", href: "#diensten" },
-    image: "", // bv. "/hero.jpg" in /public of een externe URL; leeg = kleurverloop
-    highlights: ["25+ jaar ervaring", "Gratis advies aan huis", "Garantie op al ons werk"],
+      "Vier seizoenen per jaar ontwerpen, leggen en onderhouden wij tuinen die bij u passen: van een kleine stadstuin tot een klassieke tuin of een grote boerderijtuin.",
+    primaryCta: { label: "Bel 06-20748056", href: "tel:+31620748056" },
+    secondaryCta: { label: "Vrijblijvende afspraak", href: "/offerte" },
   },
 
-  services: {
-    title: "Onze diensten",
-    intro: "Alles onder één dak, van eerste advies tot oplevering.",
-    items: [
-      { icon: "🛠️", title: "Dienst één", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-      { icon: "📐", title: "Dienst twee", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-      { icon: "✅", title: "Dienst drie", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-    ],
+  facts: [
+    "Oldenzaal",
+    "ruim 10 jaar",
+    "erkend leerbedrijf",
+    "vier seizoenen",
+  ],
+
+  contact: {
+    owner: "Maurice Agterbos",
+    companyLine: "Agterbos Hoveniers",
+    address: "Meester Troelstrastraat 7",
+    postcode: "7572 VX",
+    city: "Oldenzaal",
+    phone: "06-20748056",
+    phoneTel: "+31620748056",
+    landline: "0541 537 066",
+    landlineTel: "+31541537066",
+    email: "info@agterbos-hoveniers.nl",
+    facebook: "https://www.facebook.com/Agterbos-Hoveniers-417004092004386/",
   },
 
   about: {
-    title: "Over ons",
-    text: [
-      "Wat begon als een klein familiebedrijf is uitgegroeid tot een vertrouwd adres in de regio.",
-      "We werken met vaste vakmensen, houden ons aan afspraken en staan ook na de oplevering voor u klaar.",
-    ],
-    image: "", // optioneel
-    stats: [
-      { value: "25+", label: "jaar ervaring" },
-      { value: "1.200+", label: "tevreden klanten" },
-      { value: "9,2", label: "gemiddeld cijfer" },
-    ],
+    title: "Ons team",
+    intro:
+      "Wij zijn geen sprekers maar doeners. Zet ons in de tuin en u zult zien wat we kunnen. Onze jarenlange ervaring ziet u terug in de ontwerpen en in de keuze voor planten en materialen.",
+    experience: "Ruim 10 jaar ervaring in het creëren van droomtuinen.",
+    spuitlicentie:
+      "Deze verplichte licentie laat zien dat we over de juiste kennis en vaardigheden beschikken om verantwoord met gewasbeschermingsmiddelen aan het werk te gaan.",
+    leerbedrijf:
+      "Wij zijn een officieel leerbedrijf voor hoveniers in opleiding.",
+    tagline: "Van schets tot resultaat",
   },
 
-  reviews: {
-    title: "Wat klanten zeggen",
-    items: [
-      { name: "Familie Jansen", text: "Netjes en snel gewerkt, precies volgens afspraak. Echt een aanrader!", rating: 5 },
-      { name: "Petra de Vries", text: "Duidelijke communicatie en een eerlijke prijs. We komen zeker terug.", rating: 5 },
-      { name: "Mark Bakker", text: "Vakkundig advies en mooi resultaat. Heel tevreden.", rating: 5 },
-    ],
-  },
-
-  contact: {
-    title: "Neem contact op",
-    text: "Bel, mail of kom langs. We reageren binnen één werkdag.",
-    phone: "030 123 45 67",
-    email: "info@voorbeeldbedrijf.nl",
-    address: "Voorbeeldstraat 1, 1234 AB Utrecht",
-    openingHours: ["Ma t/m vr: 08:00 – 17:30", "Za: 09:00 – 13:00"],
-    whatsapp: "", // bv. "31612345678" (zonder +)
-    cta: { label: "Bel direct", href: "tel:0301234567" },
-  },
+  ontwerpSteps: [
+    {
+      n: "1",
+      title: "Uw wensen",
+      text: "In een intakegesprek inventariseren we uw wensen en ideeën. Daarnaast noteren we gegevens zoals de ligging van de tuin ten opzichte van de zon, hoogteverschillen en beplanting.",
+    },
+    {
+      n: "2",
+      title: "Advies",
+      text: "Vanuit onze expertise adviseren we u over de indeling van de tuin, het gebruik van planten en het gebruik van verschillende materialen.",
+    },
+    {
+      n: "3",
+      title: "Budget",
+      text: "Het budget dat u voor de tuin hebt gereserveerd is een belangrijke leidraad voor het ontwerp. We kijken samen welke rol wij op ons nemen: het volledige werk, of een deel waarbij u zelf bijdraagt.",
+    },
+    {
+      n: "4",
+      title: "Tekentafel",
+      text: "De ideeën worden omgezet naar unieke ontwerpen. Elke schets sluit aan op uw wensen en op wat de tuin toelaat: ligging, afmeting en hoogteverschillen.",
+    },
+    {
+      n: "5",
+      title: "Stappenplan",
+      text: "Als het budget de aanleg nog belemmert, ontwikkelen we samen een stappenplan om in ieder geval een begin te maken met het realiseren van uw droomtuin.",
+    },
+    {
+      n: "6",
+      title: "Tuinaanleg",
+      text: "Wanneer u besluit om de door Agterbos Hoveniers ontworpen tuin ook door ons aan te laten leggen, nemen wij de kosten van het ontwerp voor onze rekening.",
+    },
+  ],
 
   footer: {
-    kvk: "", // bv. "KvK 12345678"
-    socials: [] as { label: string; href: string }[],
+    kvk: "",
+    socials: [
+      {
+        label: "Facebook",
+        href: "https://www.facebook.com/Agterbos-Hoveniers-417004092004386/",
+      },
+    ],
   },
 };
 
