@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { content } from "@/content";
 import { Photo } from "@/components/Photo";
 import { Sluitstuk } from "@/components/Sluitstuk";
+import { Bladstempel } from "@/components/Bladstempel";
 
 export const metadata: Metadata = {
   title: "Tuinonderhoud",
@@ -15,11 +16,24 @@ export default function TuinonderhoudPage() {
   return (
     <>
       <header className="titel">
-        <p className="kicker">Tuinonderhoud</p>
-        <h1>Het hele jaar, eenmalig of als abonnement</h1>
-        <p className="lede">{onderhoud.lede}</p>
+        <div className="titel-met-stempel">
+          <div>
+            <p className="kicker">Tuinonderhoud</p>
+            <h1>Het hele jaar, eenmalig of als abonnement</h1>
+            <p className="lede">{onderhoud.lede}</p>
+          </div>
+          <Bladstempel blad="Onderhoud" />
+        </div>
       </header>
       <div className="wrap" style={{ paddingBottom: "3rem" }}>
+        <div className="vormen">
+          {onderhoud.vormen.map((vorm) => (
+            <article key={vorm.key}>
+              <p className="kicker">{vorm.key}</p>
+              <p>{vorm.text}</p>
+            </article>
+          ))}
+        </div>
         <figure className="resultaat-foto" style={{ minHeight: 360 }}>
           <div className="photo-frame">
             <Photo
@@ -38,14 +52,14 @@ export default function TuinonderhoudPage() {
 
         <div className="stack" style={{ marginTop: "1.6rem" }}>
           {onderhoud.parts.map((part) => (
-            <article key={part.title} className="nota" style={{ marginTop: 0 }}>
+            <article key={part.title} id={part.title.toLowerCase().replace(/\s+/g, "-")} className="nota" style={{ marginTop: 0 }}>
               <h2>{part.title}</h2>
               <p className="mt-2">{part.text}</p>
             </article>
           ))}
         </div>
 
-        <section style={{ marginTop: "2rem" }} data-section="seizoen">
+        <section id="najaar" style={{ marginTop: "2rem" }} data-section="seizoen">
           <p className="kicker">Seizoen</p>
           <h2>{onderhoud.tipsTitle}</h2>
           <p className="lede">{onderhoud.tipsIntro}</p>

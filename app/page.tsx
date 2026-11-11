@@ -5,6 +5,7 @@ import { Legenda } from "@/components/Legenda";
 import { Schetslijn } from "@/components/Schetslijn";
 import { Sluitstuk } from "@/components/Sluitstuk";
 import { CallLink, OfferteLink } from "@/components/Links";
+import { Bladstempel } from "@/components/Bladstempel";
 
 const { hero, photos, ontwerpSteps, ontwerp, contact, about } = content;
 
@@ -110,6 +111,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="band band--wit" data-section="tuinen" style={{ paddingTop: "0.5rem" }}>
+        <div className="wrap">
+          <div className="titel-met-stempel">
+            <div>
+              <p className="kicker">Op het blad</p>
+              <h2>Welke tuin het ook wordt</h2>
+              <p className="lede">
+                Particulier of zakelijk. De schets volgt uw wens, en wat de plek toelaat: zon, maat en hoogte.
+              </p>
+            </div>
+            <Bladstempel blad="Tuinen" />
+          </div>
+          <ul className="soorten">
+            {content.tuinen.map((tuin) => (
+              <li key={tuin.key}>
+                <span>{tuin.key}</span>
+                <strong>{tuin.label}</strong>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="band band--perk" data-section="schets">
         <div className="wrap">
           <p className="kicker">Van schets tot resultaat</p>
@@ -119,19 +143,34 @@ export default function Home() {
             de foto hiernaast zijn twee voorbeelden uit het werk, geen voor-en-na van hetzelfde perceel.
           </p>
           <div className="paar">
-            <figure className="schets-blad">
-              <Photo
-                src={photos.schets1.src}
-                alt={photos.schets1.alt}
-                width={photos.schets1.width}
-                height={photos.schets1.height}
-                native
-              />
-              <figcaption>
-                <span className="legenda__key">Schets</span>
-                <span>{photos.schets1.caption}</span>
-              </figcaption>
-            </figure>
+            <div className="schets-stapel">
+              <figure className="schets-blad">
+                <Photo
+                  src={photos.schets1.src}
+                  alt={photos.schets1.alt}
+                  width={photos.schets1.width}
+                  height={photos.schets1.height}
+                  native
+                />
+                <figcaption>
+                  <span className="legenda__key">Schets A</span>
+                  <span>{photos.schets1.caption}</span>
+                </figcaption>
+              </figure>
+              <figure className="schets-blad">
+                <Photo
+                  src={photos.schets2.src}
+                  alt={photos.schets2.alt}
+                  width={photos.schets2.width}
+                  height={photos.schets2.height}
+                  native
+                />
+                <figcaption>
+                  <span className="legenda__key">Schets B</span>
+                  <span>{photos.schets2.caption}</span>
+                </figcaption>
+              </figure>
+            </div>
             <figure className="resultaat-foto">
               <div className="photo-frame">
                 <Photo
@@ -148,6 +187,14 @@ export default function Home() {
               </figcaption>
             </figure>
           </div>
+          <ul className="notities">
+            {content.intake.map((punt) => (
+              <li key={punt.key}>
+                <span>{punt.key}</span>
+                <strong>{punt.label}</strong>
+              </li>
+            ))}
+          </ul>
           <ol className="stappen-kort">
             {ontwerpSteps.map((step) => (
               <li key={step.n}>

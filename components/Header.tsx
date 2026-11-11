@@ -102,12 +102,13 @@ export function Header() {
                 : null}
             </ul>
           </div>
-          <Link href="/over-ons" className="site-nav__link" aria-current={current("/over-ons")}>
-            Over ons
-          </Link>
-          <Link href="/contact" className="site-nav__link" aria-current={current("/contact")}>
-            Contact
-          </Link>
+          {nav.map((item) =>
+            "children" in item && item.children ? null : (
+              <Link key={item.href} href={item.href} className="site-nav__link" aria-current={current(item.href)}>
+                {item.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="site-header__actions">
@@ -143,15 +144,13 @@ export function Header() {
                   </Link>
                 ))
               : null}
-            <Link href="/over-ons" onClick={() => setMenu(false)}>
-              Over ons
-            </Link>
-            <Link href="/contact" onClick={() => setMenu(false)}>
-              Contact
-            </Link>
-            <Link href="/voorbeelden" onClick={() => setMenu(false)}>
-              Voorbeelden
-            </Link>
+            {nav.map((item) =>
+              "children" in item && item.children ? null : (
+                <Link key={item.href} href={item.href} onClick={() => setMenu(false)}>
+                  {item.label}
+                </Link>
+              ),
+            )}
             <a href={`tel:${contact.phoneTel}`} data-cta="bellen" onClick={() => setMenu(false)}>
               Bel {contact.phone}
             </a>

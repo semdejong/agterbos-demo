@@ -3,6 +3,7 @@ import Link from "next/link";
 import { content } from "@/content";
 import { Photo } from "@/components/Photo";
 import { Sluitstuk } from "@/components/Sluitstuk";
+import { Bladstempel } from "@/components/Bladstempel";
 
 export const metadata: Metadata = {
   title: "Diensten",
@@ -17,6 +18,11 @@ const kaarten = [
     title: content.ontwerp.title,
     text: content.ontwerp.lede,
     photo: content.photos.tekentafel,
+    links: content.ontwerpSteps.map((step) => ({
+      href: `/tuinontwerpen#stap-${step.n}`,
+      key: step.n,
+      label: step.title,
+    })),
   },
   {
     href: "/tuinaanleg",
@@ -24,6 +30,11 @@ const kaarten = [
     title: content.aanlegIntro.title,
     text: content.aanlegIntro.lede,
     photo: content.photos.borders,
+    links: content.aanleg.map((deel) => ({
+      href: `/tuinaanleg#${deel.id}`,
+      key: deel.legend,
+      label: deel.title,
+    })),
   },
   {
     href: "/tuinonderhoud",
@@ -31,6 +42,14 @@ const kaarten = [
     title: content.onderhoud.title,
     text: content.onderhoud.lede,
     photo: content.photos.border,
+    links: [
+      ...content.onderhoud.parts.map((part) => ({
+        href: `/tuinonderhoud#${part.title.toLowerCase().replace(/\s+/g, "-")}`,
+        key: part.title,
+        label: part.title,
+      })),
+      { href: "/tuinonderhoud#najaar", key: "Najaar", label: "Oktober tot en met december" },
+    ],
   },
 ];
 
@@ -38,12 +57,17 @@ export default function DienstenPage() {
   return (
     <>
       <header className="titel">
-        <p className="kicker">Diensten</p>
-        <h1>Tuinontwerp, aanleg en onderhoud</h1>
-        <p className="lede">
-          Hovenier in Oldenzaal, vier seizoenen per jaar, voor particulieren en bedrijven. Van een kleine stadstuin
-          tot een grote boerderijtuin.
-        </p>
+        <div className="titel-met-stempel">
+          <div>
+            <p className="kicker">Diensten</p>
+            <h1>Tuinontwerp, aanleg en onderhoud</h1>
+            <p className="lede">
+              Hovenier in Oldenzaal, vier seizoenen per jaar, voor particulieren en bedrijven. Van een kleine stadstuin
+              tot een grote boerderijtuin. Hieronder ligt het hele blad: de stappen, de onderdelen en het onderhoud.
+            </p>
+          </div>
+          <Bladstempel blad="Diensten" />
+        </div>
       </header>
       <div className="wrap" style={{ paddingBottom: "3rem" }}>
         <div className="stack" style={{ gap: "2.5rem" }}>
@@ -58,6 +82,16 @@ export default function DienstenPage() {
                     {kaart.title}
                   </Link>
                 </p>
+                <ul className="sublinks">
+                  {kaart.links.map((link) => (
+                    <li key={link.key}>
+                      <Link href={link.href}>
+                        <span className="legenda__key">{link.key}</span>
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
               <figure className="resultaat-foto" style={{ minHeight: 280 }}>
                 <div className="photo-frame">

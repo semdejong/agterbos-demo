@@ -22,9 +22,13 @@ export default function PrivacyPage() {
         conceptsite staan.
       </p>
       <p>
-        Het contactformulier en de offertepagina openen uw eigen e-mailprogramma. De ingevulde tekst wordt niet
-        opgeslagen op een server van deze conceptsite en niet stilzwijgend verzonden. U verstuurt het bericht zelf,
-        aan {contact.email}.
+        Het contactformulier vraagt om uw naam, e-mailadres, telefoonnummer en een bericht. De offertepagina doet
+        hetzelfde. Beide openen uw eigen e-mailprogramma. De ingevulde tekst wordt niet opgeslagen op een server van
+        deze conceptsite en niet stilzwijgend verzonden. U verstuurt het bericht zelf, aan {contact.email}.
+      </p>
+      <p>
+        De link naar Facebook verlaat deze conceptsite. Wat daar met uw bezoek gebeurt, bepaalt Facebook, niet dit
+        concept.
       </p>
       <p>
         Op de conceptsite staat een cookieloze bezoekteller van Sleads. Die gebruikt het kenmerk agterbos-demo.

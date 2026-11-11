@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { content } from "@/content";
 import { Photo } from "@/components/Photo";
 import { Sluitstuk } from "@/components/Sluitstuk";
 import { CallLink, MailLink } from "@/components/Links";
+import { Bladstempel } from "@/components/Bladstempel";
 
 export const metadata: Metadata = {
   title: "Over ons",
@@ -17,9 +19,14 @@ export default function OverOnsPage() {
   return (
     <>
       <header className="titel">
-        <p className="kicker">Over ons</p>
-        <h1>{about.title}</h1>
-        <p className="lede">{about.intro}</p>
+        <div className="titel-met-stempel">
+          <div>
+            <p className="kicker">Over ons</p>
+            <h1>{about.title}</h1>
+            <p className="lede">{about.intro}</p>
+          </div>
+          <Bladstempel blad="Team" />
+        </div>
       </header>
       <figure className="team-photo">
         <div className="photo-frame">
@@ -38,16 +45,17 @@ export default function OverOnsPage() {
           <div className="prose-gap">
             <p className="kicker">Ervaring</p>
             <h2>{about.experience}</h2>
-            <p>{about.tagline}</p>
-            <p>{about.spuitlicentie}</p>
-            <p>{about.leerbedrijf}</p>
-            <Image
-              src={photos.sbb.src}
-              alt={photos.sbb.alt}
-              width={96}
-              height={96}
-              className="sbb-badge"
-            />
+            <p>U ziet die ervaring terug in de ontwerpen, en in de keuze voor planten en materialen.</p>
+            <p>{about.tagline} Eerst de schets, dan de aanleg, en daarna desgewenst het onderhoud.</p>
+            <div className="nota">
+              <p className="kicker">Spuitlicentie</p>
+              <p>{about.spuitlicentie}</p>
+            </div>
+            <div className="nota">
+              <p className="kicker">Leerbedrijf</p>
+              <p>{about.leerbedrijf}</p>
+              <Image src={photos.sbb.src} alt={photos.sbb.alt} width={96} height={96} className="sbb-badge" />
+            </div>
           </div>
           <aside className="concept-note">
             <p className="kicker">Contact</p>
@@ -82,6 +90,30 @@ export default function OverOnsPage() {
             </figcaption>
           </div>
         </figure>
+        <div style={{ marginTop: "2.2rem" }}>
+          <p className="kicker">Van schets tot resultaat</p>
+          <h2>Drie lijnen, één team</h2>
+          <ul className="sublinks">
+            <li>
+              <Link href="/tuinontwerpen">
+                <span className="legenda__key">Ontwerp</span>
+                Uw wensen worden een unieke schets
+              </Link>
+            </li>
+            <li>
+              <Link href="/tuinaanleg">
+                <span className="legenda__key">Aanleg</span>
+                Een tuin voor elk budget
+              </Link>
+            </li>
+            <li>
+              <Link href="/tuinonderhoud">
+                <span className="legenda__key">Onderhoud</span>
+                Eenmalig of als abonnement
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
       <Sluitstuk />
     </>

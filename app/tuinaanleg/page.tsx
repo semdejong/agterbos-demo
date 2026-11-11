@@ -4,6 +4,7 @@ import type { Photo as PhotoData } from "@/content";
 import { Photo } from "@/components/Photo";
 import { Legenda } from "@/components/Legenda";
 import { Sluitstuk } from "@/components/Sluitstuk";
+import { Bladstempel } from "@/components/Bladstempel";
 
 export const metadata: Metadata = {
   title: "Tuinaanleg",
@@ -53,9 +54,18 @@ export default function TuinaanlegPage() {
   return (
     <>
       <header className="titel">
-        <p className="kicker">Tuinaanleg</p>
-        <h1>Een tuin voor elk budget</h1>
-        <p className="lede">{aanlegIntro.lede}</p>
+        <div className="titel-met-stempel">
+          <div>
+            <p className="kicker">Tuinaanleg</p>
+            <h1>Een tuin voor elk budget</h1>
+            <p className="lede">{aanlegIntro.lede}</p>
+            <p className="lede">
+              Past het niet in één keer, dan werken we met een stappenplan en beginnen we met een eerste fase. De
+              tekening kan van ons zijn, de ideeën mogen ook van u komen.
+            </p>
+          </div>
+          <Bladstempel blad="Aanleg" />
+        </div>
       </header>
       <Legenda
         label="Onderdelen van de aanleg"
@@ -98,6 +108,15 @@ export default function TuinaanlegPage() {
             <p className="kicker">{deel.legend}</p>
             <h2>{deel.title}</h2>
             <p className="lede">{deel.text}</p>
+            <p className="lede">{content.aanlegNoten[deel.id].nader}</p>
+            <ul className="werk-lijst">
+              {content.aanlegNoten[deel.id].punten.map((punt, index) => (
+                <li key={punt}>
+                  <span>{index + 1}</span>
+                  {punt}
+                </li>
+              ))}
+            </ul>
             <div className="foto-rij">
               {deel.photos.map((photo) => (
                 <Foto key={photo.src} photo={photo} />

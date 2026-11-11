@@ -1479,3 +1479,170 @@ a:hover {
 .prose-gap p + p {
   margin: 0;
 }
+
+.bladstempel {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr;
+  gap: 0.2rem 0.6rem;
+  width: min(20rem, 100%);
+  margin: 1.15rem 0 0;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--bos);
+  background: var(--wit);
+}
+
+.bladstempel dt,
+.bladstempel dd {
+  margin: 0;
+  font-family: var(--font-fragment), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.bladstempel dt {
+  color: var(--bos);
+}
+
+.bladstempel dd {
+  color: var(--inkt);
+}
+
+.titel-met-stempel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem 2rem;
+}
+
+.soorten,
+.notities {
+  list-style: none;
+  display: grid;
+  gap: 1px;
+  margin: 1.15rem 0 0;
+  padding: 0;
+  background: var(--bos);
+  border: 1px solid var(--bos);
+}
+
+.soorten li,
+.notities li {
+  background: var(--papier);
+  padding: 0.85rem 0.8rem 1rem;
+  min-height: 5.4rem;
+}
+
+.soorten span,
+.notities span {
+  display: block;
+  font-family: var(--font-fragment), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--bos);
+}
+
+.soorten strong,
+.notities strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-petrona), ui-serif, Georgia, serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  color: var(--bos);
+}
+
+@media (min-width: 700px) {
+  .soorten {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .notities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .soorten {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .notities {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.vormen {
+  display: grid;
+  gap: 1px;
+  margin-top: 1.2rem;
+  background: var(--bos);
+  border: 1px solid var(--bos);
+}
+
+@media (min-width: 720px) {
+  .vormen {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.vormen article {
+  background: var(--wit);
+  padding: 1rem 1rem 1.15rem;
+}
+
+.schets-stapel {
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+}
+
+.groep {
+  margin-top: 2.4rem;
+}
+
+.groep h2 {
+  font-size: 1.65rem;
+}
+
+.sublinks {
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--haarlijn);
+}
+
+.sublinks a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  min-height: 44px;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--haarlijn);
+  text-decoration: none;
+  color: var(--inkt);
+}
+
+.sublinks a:hover {
+  color: var(--bos);
+}
+
+.contact-foto {
+  margin-top: 1.2rem;
+  position: relative;
+  min-height: 220px;
+  border: 1px solid var(--bos);
+}
+
+.contact-foto .photo-frame {
+  position: absolute;
+  inset: 0;
+}
+
+.notities.notities--kolom {
+  grid-template-columns: 1fr;
+}

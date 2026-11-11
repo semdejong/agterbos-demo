@@ -68,6 +68,7 @@ export const content = {
         { label: "Tuinonderhoud", href: "/tuinonderhoud" },
       ],
     },
+    { label: "Voorbeelden", href: "/voorbeelden" },
     { label: "Over ons", href: "/over-ons" },
     { label: "Contact", href: "/contact" },
   ],
@@ -122,6 +123,49 @@ export const content = {
 
   afspraak:
     "Een afspraak verplicht u tot niets. We kijken samen naar de mogelijkheden voor ontwerp, aanleg of onderhoud.",
+
+  tuinen: [
+    { key: "Stad", label: "Kleine stadstuin" },
+    { key: "Modern", label: "Moderne tuin" },
+    { key: "Symmetrie", label: "Symmetrische tuin" },
+    { key: "Klassiek", label: "Klassieke tuin" },
+    { key: "Zuid", label: "Mediterrane sfeer" },
+    { key: "Erf", label: "Grote boerderijtuin" },
+  ],
+
+  intake: [
+    { key: "Wens", label: "Uw wensen en ideeën" },
+    { key: "Zon", label: "Ligging ten opzichte van de zon" },
+    { key: "Hoogte", label: "Hoogteverschillen" },
+    { key: "Groen", label: "Bestaande beplanting" },
+  ],
+
+  aanlegNoten: {
+    kunstgras: {
+      nader: "Het is onderhoudsarm en duurzaam, zuinig met water, en lastig van echt gras te onderscheiden.",
+      punten: ["Onderhoudsarm", "Duurzaam", "Zuinig met water", "Lastig van echt te onderscheiden"],
+    },
+    verlichting: {
+      nader: "Niet alleen als u in de tuin zit. Ook vanuit de woonkamer krijgt de tuin in de avond sfeer.",
+      punten: ["Avondsfeer", "Ook vanuit de woonkamer"],
+    },
+    tuinhout: {
+      nader: "Hout voor een plek onder dak, een doorgang, een erfafscheiding of een bak die u kunt verrijden.",
+      punten: ["Overkapping", "Pergola", "Prieel", "Schuttingen", "Vlonders", "Verrijdbare plantenbakken"],
+    },
+    vijver: {
+      nader: "Bij het water horen ook de planten, de vissen en wat daarbij komt kijken.",
+      punten: ["Siervijver", "Natuurvijver", "Koivijver", "Waterloop", "Planten en vissen"],
+    },
+    sierbestrating: {
+      nader: "Strak beton of een waal van vroeger. Voor de bestrating werken we samen met Buiter Beton in Balkbrug.",
+      punten: ["Betontegels", "Waaltjes", "Buiter Beton, Balkbrug"],
+    },
+    tuinobjecten: {
+      nader: "Een object is geen losse versiering. Het geeft de tuin een punt waar het oog blijft hangen.",
+      punten: ["Potten", "Zonnewijzer", "Beeld"],
+    },
+  },
 
   ontwerp: {
     title: "Tuinontwerp",
@@ -363,26 +407,37 @@ export const content = {
   onderhoud: {
     title: "Tuinonderhoud",
     lede: "Eenmalig, of als abonnement via een onderhoudscontract. Voor particulieren en bedrijven, het hele jaar door.",
+    vormen: [
+      {
+        key: "Eenmalig",
+        text: "Een losse beurt, wanneer de tuin het nodig heeft: snoeien, het gazon of een andere klus.",
+      },
+      {
+        key: "Abonnement",
+        text: "Een onderhoudscontract, zodat huis of bedrijf de tuin het jaar rond verzorgd houdt.",
+      },
+    ],
     parts: [
       {
         title: "Snoeien",
-        text: "Snoeien doen we in het voorjaar en in het najaar.",
+        text: "Snoeien doen we in het voorjaar en in het najaar. De beplanting blijft in vorm, op het moment dat de plant het vraagt.",
       },
       {
         title: "Gazononderhoud",
-        text: "Maaien, sproeien, verticuteren en bemesten. Ook mos en kale plekken pakken we aan.",
+        text: "Een gazon is meer dan een maaibeurt. We sproeien, verticuteren en bemesten, en pakken mos en kale plekken aan.",
       },
       {
         title: "Bomen vellen",
-        text: "Bomen vellen vraagt vakmanschap. Waar nodig helpen we u met de kapvergunning.",
+        text: "Bomen vellen vraagt vakmanschap. Is een kapvergunning nodig, dan helpen we u daarbij.",
       },
       {
         title: "Bedrijfstuinen",
-        text: "Ook voor bedrijven. Een verzorgde bedrijfstuin is het visitekaartje van uw onderneming.",
+        text: "Ook voor bedrijven. Een verzorgde bedrijfstuin is het visitekaartje van uw onderneming, in elk seizoen.",
       },
     ],
     tipsTitle: "Oktober tot en met december",
-    tipsIntro: "Voor deze maanden geldt op de onderhoudspagina het volgende.",
+    tipsIntro:
+      "We zijn er vier seizoenen. De tips die we hier uitschrijven, gelden voor oktober tot en met december.",
     tips: [
       "Blad van het gazon halen",
       "Bemesten",

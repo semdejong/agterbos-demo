@@ -3,6 +3,7 @@ import { content } from "@/content";
 import { Photo } from "@/components/Photo";
 import { Legenda } from "@/components/Legenda";
 import { Sluitstuk } from "@/components/Sluitstuk";
+import { Bladstempel } from "@/components/Bladstempel";
 
 export const metadata: Metadata = {
   title: "Tuinontwerp",
@@ -16,9 +17,22 @@ export default function TuinontwerpPage() {
   return (
     <>
       <header className="titel">
-        <p className="kicker">Tuinontwerp</p>
-        <h1>Van uw wensen naar een unieke schets</h1>
-        <p className="lede">{ontwerp.lede}</p>
+        <div className="titel-met-stempel">
+          <div>
+            <p className="kicker">Tuinontwerp</p>
+            <h1>Van uw wensen naar een unieke schets</h1>
+            <p className="lede">{ontwerp.lede}</p>
+          </div>
+          <Bladstempel blad="Ontwerp" />
+        </div>
+        <ul className="soorten">
+          {content.tuinen.map((tuin) => (
+            <li key={tuin.key}>
+              <span>{tuin.key}</span>
+              <strong>{tuin.label}</strong>
+            </li>
+          ))}
+        </ul>
       </header>
       <Legenda
         label="Zes stappen"
@@ -29,6 +43,22 @@ export default function TuinontwerpPage() {
         }))}
       />
       <div className="wrap" style={{ paddingBottom: "3rem" }}>
+        <p className="kicker" style={{ marginTop: "1.6rem" }}>
+          Genoteerd bij de intake
+        </p>
+        <ul className="notities">
+          {content.intake.map((punt) => (
+            <li key={punt.key}>
+              <span>{punt.key}</span>
+              <strong>{punt.label}</strong>
+            </li>
+          ))}
+        </ul>
+        <p className="lede">
+          Daarna adviseren we over indeling, planten en materialen. Het budget dat u hebt gereserveerd, stuurt het
+          ontwerp: wij doen het hele werk, of een deel waarbij u zelf meedoet. Zit het budget in de weg, dan komt er
+          een stappenplan zodat de droomtuin toch kan beginnen.
+        </p>
         <ol className="stappen">
           {ontwerpSteps.map((step) => (
             <li key={step.n} id={`stap-${step.n}`}>
