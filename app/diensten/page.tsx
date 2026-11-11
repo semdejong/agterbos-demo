@@ -18,6 +18,7 @@ const kaarten = [
     title: content.ontwerp.title,
     text: content.ontwerp.lede,
     photo: content.photos.tekentafel,
+    meer: "De zes stappen",
     links: content.ontwerpSteps.map((step) => ({
       href: `/tuinontwerpen#stap-${step.n}`,
       key: step.n,
@@ -30,6 +31,7 @@ const kaarten = [
     title: content.aanlegIntro.title,
     text: content.aanlegIntro.lede,
     photo: content.photos.borders,
+    meer: "Alle onderdelen",
     links: content.aanleg.map((deel) => ({
       href: `/tuinaanleg#${deel.id}`,
       key: deel.legend,
@@ -42,6 +44,7 @@ const kaarten = [
     title: content.onderhoud.title,
     text: content.onderhoud.lede,
     photo: content.photos.border,
+    meer: "Onderhoud en het najaar",
     links: [
       ...content.onderhoud.parts.map((part) => ({
         href: `/tuinonderhoud#${part.title.toLowerCase().replace(/\s+/g, "-")}`,
@@ -79,7 +82,7 @@ export default function DienstenPage() {
                 <p className="lede">{kaart.text}</p>
                 <p>
                   <Link href={kaart.href} className="text-link">
-                    {kaart.title}
+                    {kaart.meer}
                   </Link>
                 </p>
                 <ul className="sublinks">

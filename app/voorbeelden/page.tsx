@@ -32,7 +32,11 @@ const groepen: { key: string; title: string; tekst: string; fotos: Item[] }[] = 
     key: "Schets",
     title: "Schets en tekentafel",
     tekst: "Handgetekende plannen, en het tekenen zelf. De schetsen zijn geen voor-en-na van de foto's hierboven.",
-    fotos: [content.photos.schets1, content.photos.schets2, content.photos.tekentafel],
+    fotos: [
+      { ...content.photos.schets1, caption: "Eerste schets" },
+      { ...content.photos.schets2, caption: "Tweede schets" },
+      content.photos.tekentafel,
+    ],
   },
   {
     key: "Aanleg",
@@ -78,7 +82,7 @@ const groepen: { key: string; title: string; tekst: string; fotos: Item[] }[] = 
   },
 ];
 
-function VakFoto({ foto }: { foto: Item }) {
+function VakFoto({ foto, sleutel }: { foto: Item; sleutel: string }) {
   return (
     <figure>
       {foto.native ? (
@@ -95,8 +99,9 @@ function VakFoto({ foto }: { foto: Item }) {
         </div>
       )}
       <figcaption>
-        <span className="legenda__key">{foto.caption}</span>
-        {"credit" in foto && foto.credit ? <span>{foto.credit}</span> : null}
+        <span className="legenda__key">{sleutel}</span>
+        <span>{foto.caption}</span>
+        {foto.credit ? <span>{foto.credit}</span> : null}
       </figcaption>
     </figure>
   );
@@ -126,7 +131,7 @@ export default function VoorbeeldenPage() {
             <p className="lede">{groep.tekst}</p>
             <div className="galerij" style={{ marginTop: "1rem" }}>
               {groep.fotos.map((foto) => (
-                <VakFoto key={foto.src} foto={foto} />
+                <VakFoto key={foto.src} foto={foto} sleutel={groep.key} />
               ))}
             </div>
           </section>

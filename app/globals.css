@@ -540,6 +540,15 @@ a:hover {
   padding: 0.7rem 0;
 }
 
+@media (min-width: 800px) {
+  .legenda ol {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.15rem 1.5rem;
+    align-items: center;
+  }
+}
+
 .legenda li,
 .legenda a {
   display: flex;
@@ -679,11 +688,13 @@ a:hover {
 
 .vak__media--native {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 0.85rem;
+  flex: 0 0 auto;
+  padding: 0.85rem 0.85rem 0.35rem;
   min-height: 0;
   aspect-ratio: auto;
+  background: var(--papier);
 }
 
 .vak__cap {
@@ -841,6 +852,37 @@ a:hover {
   padding: 0.95rem 1rem 1rem 1.05rem;
   background: var(--wit);
   border-left: 2px solid var(--bos);
+}
+
+.nota-grid {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+.nota-grid .nota {
+  margin-top: 0;
+  scroll-margin-top: 5.5rem;
+}
+
+.sfeer-rij {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.sfeer-rij .resultaat-foto {
+  min-height: 240px;
+}
+
+@media (min-width: 800px) {
+  .nota-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sfeer-rij {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .nota p + p {
@@ -1225,7 +1267,10 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 0.6rem;
-  padding: 0.4rem 0.25rem 0.2rem;
+  align-items: baseline;
+  padding: 0.45rem 0.25rem 0.2rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
 @media (min-width: 700px) {
@@ -1333,10 +1378,6 @@ a:hover {
     grid-template-columns: 1.3fr 0.8fr auto;
     align-items: start;
   }
-
-  .footer-base {
-    padding-left: 11rem;
-  }
 }
 
 /* Mobiele balk */
@@ -1403,10 +1444,8 @@ a:hover {
 }
 
 .sleads-badge {
-  position: fixed;
-  z-index: 40;
-  left: 0.75rem;
-  bottom: calc(4.35rem + env(safe-area-inset-bottom));
+  position: static;
+  z-index: 1;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -1435,10 +1474,8 @@ a:hover {
   font-weight: 600;
 }
 
-@media (min-width: 960px) {
-  .sleads-badge {
-    bottom: 1rem;
-  }
+.footer-base .sleads-badge {
+  color: var(--inkt);
 }
 
 .photo-native {
@@ -1484,7 +1521,7 @@ a:hover {
   display: grid;
   grid-template-columns: 4.2rem 1fr;
   gap: 0.2rem 0.6rem;
-  width: min(20rem, 100%);
+  width: min(17.5rem, 100%);
   margin: 1.15rem 0 0;
   padding: 0.65rem 0.75rem;
   border: 1px solid var(--bos);
@@ -1507,6 +1544,7 @@ a:hover {
 
 .bladstempel dd {
   color: var(--inkt);
+  white-space: nowrap;
 }
 
 .titel-met-stempel {
@@ -1568,7 +1606,7 @@ a:hover {
 
 @media (min-width: 1000px) {
   .soorten {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .notities {

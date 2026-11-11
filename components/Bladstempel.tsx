@@ -7,7 +7,11 @@ export function Bladstempel({ blad }: { blad: string }) {
       <dt>Plaats</dt>
       <dd>Oldenzaal</dd>
       <dt>Lijn</dt>
-      <dd>Van schets tot resultaat</dd>
+      <dd>
+        Van schets
+        <br />
+        tot resultaat
+      </dd>
     </dl>
   );
 }

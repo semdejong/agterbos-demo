@@ -3,7 +3,6 @@ import { Fragment_Mono, Petrona, Sora } from "next/font/google";
 import type { CSSProperties } from "react";
 import "./globals.css";
 import { content } from "@/content";
-import SleadsBadge from "@/components/SleadsBadge";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileBar } from "@/components/MobileBar";
@@ -78,7 +77,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <Footer />
         <MobileBar />
-        <SleadsBadge />
       </body>
     </html>
   );

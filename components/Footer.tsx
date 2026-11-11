@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { content } from "@/content";
 import { CallLink, MailLink } from "@/components/Links";
+import SleadsBadge from "@/components/SleadsBadge";
 
 export function Footer() {
   const { company, contact, partners, photos } = content;
@@ -97,12 +98,10 @@ export function Footer() {
           </div>
         </div>
         <div className="wrap footer-base">
+          <SleadsBadge />
           <p>
             {company.name} · {company.city}
           </p>
-          <a href="https://sleads.nl" target="_blank" rel="noopener noreferrer">
-            Concept door Sleads
-          </a>
         </div>
       </div>
     </footer>

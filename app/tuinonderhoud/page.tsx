@@ -50,9 +50,9 @@ export default function TuinonderhoudPage() {
           </figcaption>
         </figure>
 
-        <div className="stack" style={{ marginTop: "1.6rem" }}>
+        <div className="nota-grid">
           {onderhoud.parts.map((part) => (
-            <article key={part.title} id={part.title.toLowerCase().replace(/\s+/g, "-")} className="nota" style={{ marginTop: 0 }}>
+            <article key={part.title} id={part.title.toLowerCase().replace(/\s+/g, "-")} className="nota">
               <h2>{part.title}</h2>
               <p className="mt-2">{part.text}</p>
             </article>
@@ -73,7 +73,7 @@ export default function TuinonderhoudPage() {
           </ul>
         </section>
 
-        <div className="split" style={{ marginTop: "2rem" }}>
+        <div className="sfeer-rij">
           <figure>
             <div className="resultaat-foto" style={{ minHeight: 320, position: "relative" }}>
               <div className="photo-frame">
@@ -86,7 +86,8 @@ export default function TuinonderhoudPage() {
                 />
               </div>
               <figcaption className="hero-caption">
-                <span className="legenda__key">{photos.bloei.caption}</span>
+                <span className="legenda__key">Sfeer</span>
+                <span>{photos.bloei.caption}</span>
               </figcaption>
             </div>
           </figure>
@@ -102,8 +103,11 @@ export default function TuinonderhoudPage() {
                 />
               </div>
               <figcaption className="hero-caption">
-                <span className="legenda__key">{photos.bij.caption}</span>
-                <span>{photos.bij.credit}</span>
+                <span className="legenda__key">Sfeer</span>
+                <span>
+                  {photos.bij.caption}
+                  {photos.bij.credit ? ` · ${photos.bij.credit}` : ""}
+                </span>
               </figcaption>
             </div>
           </figure>
@@ -119,15 +123,18 @@ export default function TuinonderhoudPage() {
                 />
               </div>
               <figcaption className="hero-caption">
-                <span className="legenda__key">{photos.vlinder.caption}</span>
-                <span>{photos.vlinder.credit}</span>
+                <span className="legenda__key">Sfeer</span>
+                <span>
+                  {photos.vlinder.caption}
+                  {photos.vlinder.credit ? ` · ${photos.vlinder.credit}` : ""}
+                </span>
               </figcaption>
             </div>
           </figure>
         </div>
         <p className="lede">
-          De close-ups horen bij de sfeer van een bloeiende tuin. Het onderhoud zelf is snoeien, het gazon, bomen en
-          een contract voor het hele jaar.
+          Bloei, een bij en een vlinder: de tuin zoals die er in het seizoen bij staat. Het werk zit in snoeien, het
+          gazon, de bomen en het contract.
         </p>
       </div>
       <Sluitstuk />

@@ -86,7 +86,7 @@ export default function TuinaanlegPage() {
               native
             />
             <figcaption>
-              <span className="legenda__key">Tuinaanleg</span>
+              <span className="legenda__key">{photos.minigraver.caption}</span>
             </figcaption>
           </figure>
           <figure className="foto-blok">
@@ -98,7 +98,7 @@ export default function TuinaanlegPage() {
               native
             />
             <figcaption>
-              <span className="legenda__key">Tuinaanleg</span>
+              <span className="legenda__key">{photos.minigraver2.caption}</span>
             </figcaption>
           </figure>
         </div>
@@ -108,7 +108,6 @@ export default function TuinaanlegPage() {
             <p className="kicker">{deel.legend}</p>
             <h2>{deel.title}</h2>
             <p className="lede">{deel.text}</p>
-            <p className="lede">{content.aanlegNoten[deel.id].nader}</p>
             <ul className="werk-lijst">
               {content.aanlegNoten[deel.id].punten.map((punt, index) => (
                 <li key={punt}>

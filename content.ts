@@ -75,7 +75,7 @@ export const content = {
 
   hero: {
     title: "Van schets tot resultaat — uw hovenier in Oldenzaal.",
-    lede: "Tuinontwerp, tuinaanleg en tuinonderhoud, ook als abonnement. Vier seizoenen, voor particulieren en bedrijven: van een kleine stadstuin tot een moderne, symmetrische of klassieke tuin, een mediterrane sfeer of een grote boerderijtuin.",
+    lede: "Tuinontwerp, tuinaanleg en tuinonderhoud, ook als abonnement. Vier seizoenen, voor particulieren en bedrijven in Oldenzaal.",
     image: {
       src: "/img/home/vijver-loopplanken.jpg",
       alt: "Tuin in Oldenzaal",
@@ -88,9 +88,9 @@ export const content = {
 
   facts: [
     { key: "Adres", value: "Meester Troelstrastraat 7, Oldenzaal" },
-    { key: "Ervaring", value: "ruim 10 jaar" },
-    { key: "Leerbedrijf", value: "erkend leerbedrijf" },
-    { key: "Seizoen", value: "vier seizoenen" },
+    { key: "Ervaring", value: "Ruim 10 jaar" },
+    { key: "Leerbedrijf", value: "Erkend leerbedrijf" },
+    { key: "Seizoen", value: "Vier seizoenen" },
   ],
 
   contact: {
@@ -235,14 +235,14 @@ export const content = {
           alt: "Kunstgras",
           width: 960,
           height: 720,
-          caption: "Kunstgras",
+          caption: "In aanleg",
         },
         {
           src: "/img/aanleg/kunstgras-detail.jpg",
           alt: "Kunstgras",
           width: 400,
           height: 400,
-          caption: "Kunstgras",
+          caption: "Detail",
           native: true,
         },
         {
@@ -250,7 +250,7 @@ export const content = {
           alt: "Kunstgras",
           width: 500,
           height: 333,
-          caption: "Kunstgras",
+          caption: "Bij het terras",
           native: true,
         },
       ] satisfies Photo[],
@@ -535,7 +535,7 @@ export const content = {
       alt: "Tuinaanleg",
       width: 500,
       height: 375,
-      caption: "Tuinaanleg",
+      caption: "Minigraver",
       native: true,
     },
     minigraver2: {
@@ -543,7 +543,7 @@ export const content = {
       alt: "Tuinaanleg",
       width: 500,
       height: 375,
-      caption: "Tuinaanleg",
+      caption: "Minigraver",
       native: true,
     },
     sbb: {
