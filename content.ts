@@ -135,7 +135,7 @@ export const content = {
 
   intake: [
     { key: "Wens", label: "Uw wensen en ideeën" },
-    { key: "Zon", label: "Ligging ten opzichte van de zon" },
+    { key: "Zon", label: "Ligging t.o.v. de zon" },
     { key: "Hoogte", label: "Hoogteverschillen" },
     { key: "Groen", label: "Bestaande beplanting" },
   ],
@@ -506,7 +506,6 @@ export const content = {
       width: 5184,
       height: 3456,
       caption: "Bloei in de tuin",
-      credit: "Foto: Monique",
     },
     vlinder: {
       src: "/img/onderhoud/vlinder.jpg",
@@ -514,7 +513,6 @@ export const content = {
       width: 5184,
       height: 3456,
       caption: "Vlinder in de tuin",
-      credit: "Foto: Monique",
     },
     border: {
       src: "/img/aanleg/border-met-objecten.jpg",

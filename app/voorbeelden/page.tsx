@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Foto's uit het werk van Agterbos Hoveniers in Oldenzaal: tuinen, aanleg, schetsen, water, hout, bestrating en licht.",
 };
 
-type Item = PhotoData & { credit?: string };
+type Item = PhotoData;
 
 const groepen: { key: string; title: string; tekst: string; fotos: Item[] }[] = [
   {
@@ -101,7 +101,6 @@ function VakFoto({ foto, sleutel }: { foto: Item; sleutel: string }) {
       <figcaption>
         <span className="legenda__key">{sleutel}</span>
         <span>{foto.caption}</span>
-        {foto.credit ? <span>{foto.credit}</span> : null}
       </figcaption>
     </figure>
   );

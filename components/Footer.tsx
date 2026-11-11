@@ -53,7 +53,7 @@ export function Footer() {
           </div>
           <div>
             <p className="kicker" style={{ color: "var(--papier)" }}>
-              Pagina&apos;s
+              Op deze site
             </p>
             <ul className="footer-list">
               <li>

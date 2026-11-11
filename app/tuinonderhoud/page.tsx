@@ -106,7 +106,6 @@ export default function TuinonderhoudPage() {
                 <span className="legenda__key">Sfeer</span>
                 <span>
                   {photos.bij.caption}
-                  {photos.bij.credit ? ` · ${photos.bij.credit}` : ""}
                 </span>
               </figcaption>
             </div>
@@ -126,7 +125,6 @@ export default function TuinonderhoudPage() {
                 <span className="legenda__key">Sfeer</span>
                 <span>
                   {photos.vlinder.caption}
-                  {photos.vlinder.credit ? ` · ${photos.vlinder.credit}` : ""}
                 </span>
               </figcaption>
             </div>

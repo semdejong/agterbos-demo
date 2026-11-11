@@ -635,6 +635,42 @@ a:hover {
   border-top: 1px solid var(--bos);
 }
 
+@media (max-width: 879px) {
+  .hero {
+    padding: 0.7rem 0 0.15rem;
+  }
+
+  .hero-copy {
+    padding: 0.85rem 0.95rem 0.95rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.7rem, 7.6vw, 2.3rem);
+  }
+
+  .hero-copy .lede {
+    margin-top: 0.65rem;
+  }
+
+  .hero-photo {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Bijschrift in de flow, boven de sticky balk in beeld. */
+  .hero-photo .photo-frame {
+    position: relative;
+    inset: auto;
+    height: min(26vh, 160px);
+    min-height: 140px;
+  }
+
+  .hero-caption {
+    position: static;
+  }
+}
+
 @media (min-width: 880px) {
   .hero-grid {
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -1431,7 +1467,8 @@ a:hover {
 
 @media (max-width: 959px) {
   body {
-    padding-bottom: calc(3.6rem + env(safe-area-inset-bottom));
+    /* Balk is ~62px inclusief schetslijn; 3.6rem was te krap voor badge en sluitregel. */
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
   }
 }
 
@@ -1474,8 +1511,10 @@ a:hover {
   font-weight: 600;
 }
 
-.footer-base .sleads-badge {
+.footer-base .sleads-badge,
+.site-footer .sleads-badge {
   color: var(--inkt);
+  text-decoration: none;
 }
 
 .photo-native {
