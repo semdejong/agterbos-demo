@@ -2,8 +2,19 @@
  * Agterbos Hoveniers — alleen geverifieerde feiten
  * (agterbos-hoveniers.nl, 11 nov 2026).
  * Geen oprichtingsjaar, geen KvK/BTW, geen openingstijden, geen reviews,
- * geen info@tuinopmaat.com, geen werkgebied buiten Oldenzaal, geen extra jaartallen.
+ * geen info@tuinopmaat.com, geen werkgebied buiten Oldenzaal.
  */
+
+export type Photo = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption: string;
+  /** Toon niet breder dan het bronbestand. */
+  native?: boolean;
+};
+
 export const content = {
   slug: "agterbos-demo",
 
@@ -25,7 +36,7 @@ export const content = {
   colors: {
     primary: "#005133",
     primaryForeground: "#ffffff",
-    accent: "#D46600",
+    accent: "#B34A00",
     background: "#F4F1EA",
     foreground: "#222222",
     muted: "#E7EEE8",
@@ -35,7 +46,7 @@ export const content = {
     schetspapier: "#F4F1EA",
     perk: "#E7EEE8",
     wit: "#FFFFFF",
-    potlood: "#D46600",
+    potlood: "#B34A00",
     potloodText: "#B34A00",
     haarlijn: "#C5CDC6",
   },
@@ -63,17 +74,22 @@ export const content = {
 
   hero: {
     title: "Van schets tot resultaat — uw hovenier in Oldenzaal.",
-    subtitle:
-      "Vier seizoenen per jaar ontwerpen, leggen en onderhouden wij tuinen die bij u passen: van een kleine stadstuin tot een klassieke tuin of een grote boerderijtuin.",
-    primaryCta: { label: "Bel 06-20748056", href: "tel:+31620748056" },
-    secondaryCta: { label: "Vrijblijvende afspraak", href: "/offerte" },
+    lede: "Tuinontwerp, tuinaanleg en tuinonderhoud, ook als abonnement. Vier seizoenen, voor particulieren en bedrijven: van een kleine stadstuin tot een moderne, symmetrische of klassieke tuin, een mediterrane sfeer of een grote boerderijtuin.",
+    image: {
+      src: "/img/home/vijver-loopplanken.jpg",
+      alt: "Tuin in Oldenzaal",
+      width: 2048,
+      height: 1536,
+      caption: "Tuin in Oldenzaal",
+      legend: "Tuinaanleg",
+    },
   },
 
   facts: [
-    "Oldenzaal",
-    "ruim 10 jaar",
-    "erkend leerbedrijf",
-    "vier seizoenen",
+    { key: "Adres", value: "Meester Troelstrastraat 7, Oldenzaal" },
+    { key: "Ervaring", value: "ruim 10 jaar" },
+    { key: "Leerbedrijf", value: "erkend leerbedrijf" },
+    { key: "Seizoen", value: "vier seizoenen" },
   ],
 
   contact: {
@@ -82,12 +98,14 @@ export const content = {
     address: "Meester Troelstrastraat 7",
     postcode: "7572 VX",
     city: "Oldenzaal",
+    addressLine: "Meester Troelstrastraat 7, 7572 VX Oldenzaal",
     phone: "06-20748056",
     phoneTel: "+31620748056",
     landline: "0541 537 066",
     landlineTel: "+31541537066",
     email: "info@agterbos-hoveniers.nl",
     facebook: "https://www.facebook.com/Agterbos-Hoveniers-417004092004386/",
+    facebookLabel: "Facebook",
   },
 
   about: {
@@ -95,11 +113,32 @@ export const content = {
     intro:
       "Wij zijn geen sprekers maar doeners. Zet ons in de tuin en u zult zien wat we kunnen. Onze jarenlange ervaring ziet u terug in de ontwerpen en in de keuze voor planten en materialen.",
     experience: "Ruim 10 jaar ervaring in het creëren van droomtuinen.",
+    experienceInline: "ruim 10 jaar ervaring in het creëren van droomtuinen",
     spuitlicentie:
-      "Deze verplichte licentie laat zien dat we over de juiste kennis en vaardigheden beschikken om verantwoord met gewasbeschermingsmiddelen aan het werk te gaan.",
-    leerbedrijf:
-      "Wij zijn een officieel leerbedrijf voor hoveniers in opleiding.",
-    tagline: "Van schets tot resultaat",
+      "Agterbos Hoveniers heeft de verplichte spuitlicentie. Deze verplichte licentie laat zien dat we over de juiste kennis en vaardigheden beschikken om verantwoord met gewasbeschermingsmiddelen aan het werk te gaan.",
+    leerbedrijf: "Wij zijn een officieel leerbedrijf voor hoveniers in opleiding.",
+    tagline: "Van schets tot resultaat.",
+  },
+
+  afspraak:
+    "Een afspraak verplicht u tot niets. We kijken samen naar de mogelijkheden voor ontwerp, aanleg of onderhoud.",
+
+  ontwerp: {
+    title: "Tuinontwerp",
+    lede: "Uw wensen worden een uniek tuinontwerp. Een kleine stadstuin, een moderne, symmetrische of klassieke tuin, een mediterrane sfeer of een grote boerderijtuin: de schets sluit aan op wat u wilt en op wat de plek toelaat.",
+    renovatieIntro:
+      "Ook bestaande tuinen pakken we aan, helemaal of in fases.",
+    renovatie: [
+      "Nieuwe grasmat",
+      "Schuttingen",
+      "Terras",
+      "Veranda",
+      "Vijver",
+      "Border beplanten",
+      "Nieuw lichtplan",
+    ],
+    kosten:
+      "Wanneer u besluit om de door Agterbos Hoveniers ontworpen tuin ook door ons aan te laten leggen, nemen wij de kosten van het ontwerp voor onze rekening.",
   },
 
   ontwerpSteps: [
@@ -135,6 +174,337 @@ export const content = {
     },
   ],
 
+  aanlegIntro: {
+    title: "Tuinaanleg",
+    lede: "Een tuin voor elk budget, vanuit ons ontwerp of vanuit uw eigen ideeën. Van kunstgras en verlichting tot tuinhout, water, sierbestrating en tuinobjecten.",
+  },
+
+  aanleg: [
+    {
+      id: "kunstgras",
+      legend: "Kunstgras",
+      title: "Kunstgras",
+      text: "Kunstgras is onderhoudsarm, duurzaam en zuinig met water. Het is lastig te onderscheiden van echt gras.",
+      photos: [
+        {
+          src: "/img/aanleg/kunstgras-aanleg.jpg",
+          alt: "Kunstgras",
+          width: 960,
+          height: 720,
+          caption: "Kunstgras",
+        },
+        {
+          src: "/img/aanleg/kunstgras-detail.jpg",
+          alt: "Kunstgras",
+          width: 400,
+          height: 400,
+          caption: "Kunstgras",
+          native: true,
+        },
+        {
+          src: "/img/aanleg/kunstgras-onder-terras.jpg",
+          alt: "Kunstgras",
+          width: 500,
+          height: 333,
+          caption: "Kunstgras",
+          native: true,
+        },
+      ] satisfies Photo[],
+    },
+    {
+      id: "verlichting",
+      legend: "Verlichting",
+      title: "Tuinverlichting",
+      text: "Verlichting geeft de tuin in de avond sfeer, ook vanuit de woonkamer.",
+      photos: [
+        {
+          src: "/img/aanleg/tuinverlichting-avond.jpg",
+          alt: "Tuinverlichting",
+          width: 1280,
+          height: 853,
+          caption: "Tuinverlichting",
+        },
+        {
+          src: "/img/aanleg/tuinverlichting-spot.jpg",
+          alt: "Tuinverlichting",
+          width: 768,
+          height: 1024,
+          caption: "Tuinverlichting",
+        },
+      ] satisfies Photo[],
+    },
+    {
+      id: "tuinhout",
+      legend: "Tuinhout",
+      title: "Tuinhout",
+      text: "Overkapping, pergola of prieel, schuttingen, vlonders en verrijdbare plantenbakken.",
+      photos: [
+        {
+          src: "/img/aanleg/tuinhout-latwerk.jpg",
+          alt: "Tuinhout",
+          width: 500,
+          height: 375,
+          caption: "Tuinhout",
+          native: true,
+        },
+        {
+          src: "/img/aanleg/tuinhout-tafel.jpg",
+          alt: "Tuinhout",
+          width: 500,
+          height: 333,
+          caption: "Tuinhout",
+          native: true,
+        },
+        {
+          src: "/img/aanleg/tuinhout-vlonder.jpg",
+          alt: "Tuinhout",
+          width: 400,
+          height: 400,
+          caption: "Tuinhout",
+          native: true,
+        },
+      ] satisfies Photo[],
+    },
+    {
+      id: "vijver",
+      legend: "Vijver",
+      title: "Vijver en waterpartij",
+      text: "Siervijvers, natuurvijvers, koivijvers en waterlopen. Ook de planten, de vissen en wat daarbij hoort.",
+      photos: [
+        {
+          src: "/img/aanleg/vijver-fontein.jpg",
+          alt: "Vijver en waterpartij",
+          width: 2000,
+          height: 1723,
+          caption: "Vijver en waterpartij",
+        },
+        {
+          src: "/img/aanleg/waterpartij-keien.jpg",
+          alt: "Vijver en waterpartij",
+          width: 500,
+          height: 375,
+          caption: "Vijver en waterpartij",
+          native: true,
+        },
+        {
+          src: "/img/aanleg/fontein-stralen.jpg",
+          alt: "Vijver en waterpartij",
+          width: 500,
+          height: 333,
+          caption: "Vijver en waterpartij",
+          native: true,
+        },
+      ] satisfies Photo[],
+    },
+    {
+      id: "sierbestrating",
+      legend: "Bestrating",
+      title: "Sierbestrating",
+      text: "Trendy betontegels of waaltjes van vroeger. Voor bestrating werken we samen met Buiter Beton in Balkbrug.",
+      photos: [
+        {
+          src: "/img/aanleg/sierbestrating-pad.jpg",
+          alt: "Sierbestrating",
+          width: 553,
+          height: 350,
+          caption: "Sierbestrating",
+          native: true,
+        },
+        {
+          src: "/img/aanleg/sierbestrating-waaltjes.jpg",
+          alt: "Sierbestrating",
+          width: 500,
+          height: 332,
+          caption: "Sierbestrating",
+          native: true,
+        },
+        {
+          src: "/img/aanleg/sierbestrating-mozaiek.jpg",
+          alt: "Sierbestrating",
+          width: 500,
+          height: 373,
+          caption: "Sierbestrating",
+          native: true,
+        },
+      ] satisfies Photo[],
+    },
+    {
+      id: "tuinobjecten",
+      legend: "Objecten",
+      title: "Tuinobjecten",
+      text: "Potten, een zonnewijzer of een beeld geven de tuin een eigen accent.",
+      photos: [
+        {
+          src: "/img/aanleg/tuinobject.jpg",
+          alt: "Tuinobjecten",
+          width: 1000,
+          height: 750,
+          caption: "Tuinobjecten",
+        },
+        {
+          src: "/img/aanleg/border-met-objecten.jpg",
+          alt: "Tuinobjecten",
+          width: 2048,
+          height: 813,
+          caption: "Tuinobjecten",
+        },
+        {
+          src: "/img/aanleg/gemetselde-bak.jpg",
+          alt: "Tuinaanleg",
+          width: 500,
+          height: 375,
+          caption: "Tuinaanleg",
+          native: true,
+        },
+      ] satisfies Photo[],
+    },
+  ],
+
+  onderhoud: {
+    title: "Tuinonderhoud",
+    lede: "Eenmalig, of als abonnement via een onderhoudscontract. Voor particulieren en bedrijven, het hele jaar door.",
+    parts: [
+      {
+        title: "Snoeien",
+        text: "Snoeien doen we in het voorjaar en in het najaar.",
+      },
+      {
+        title: "Gazononderhoud",
+        text: "Maaien, sproeien, verticuteren en bemesten. Ook mos en kale plekken pakken we aan.",
+      },
+      {
+        title: "Bomen vellen",
+        text: "Bomen vellen vraagt vakmanschap. Waar nodig helpen we u met de kapvergunning.",
+      },
+      {
+        title: "Bedrijfstuinen",
+        text: "Ook voor bedrijven. Een verzorgde bedrijfstuin is het visitekaartje van uw onderneming.",
+      },
+    ],
+    tipsTitle: "Oktober tot en met december",
+    tipsIntro: "Voor deze maanden geldt op de onderhoudspagina het volgende.",
+    tips: [
+      "Blad van het gazon halen",
+      "Bemesten",
+      "Bekalken",
+      "Snoeien",
+      "Eikenblad uit de border houden, omdat het zuur is",
+    ],
+  },
+
+  partners: [
+    { src: "/img/merken/buiter-beton.png", alt: "Buiter Beton", width: 110, height: 22 },
+    { src: "/img/merken/kees-smit.png", alt: "Kees Smit", width: 110, height: 29 },
+    { src: "/img/merken/de-vries.jpg", alt: "De Vries", width: 110, height: 42 },
+    { src: "/img/merken/vario-kunstgras.png", alt: "Vario Kunstgras", width: 170, height: 48 },
+    { src: "/img/merken/royal-grass.png", alt: "Royal Grass", width: 531, height: 531 },
+  ],
+
+  photos: {
+    schets1: {
+      src: "/img/ontwerp/tuinontwerp-schets-1.jpg",
+      alt: "Handgetekend tuinontwerp",
+      width: 472,
+      height: 466,
+      caption: "Handgetekend tuinontwerp",
+      native: true,
+    },
+    schets2: {
+      src: "/img/ontwerp/tuinontwerp-schets-2.jpg",
+      alt: "Handgetekend tuinontwerp",
+      width: 400,
+      height: 398,
+      caption: "Handgetekend tuinontwerp",
+      native: true,
+    },
+    tekentafel: {
+      src: "/img/ontwerp/tekentafel.jpg",
+      alt: "Tuinontwerp aan de tekentafel bij Agterbos Hoveniers.",
+      width: 3024,
+      height: 3024,
+      caption: "Tuinontwerp",
+    },
+    borders: {
+      src: "/img/home/woning-tuin-borders.jpg",
+      alt: "Tuin in Oldenzaal",
+      width: 2048,
+      height: 1536,
+      caption: "Tuin in Oldenzaal",
+    },
+    team: {
+      src: "/img/team/team-agterbos.jpg",
+      alt: "Het team van Agterbos Hoveniers in Oldenzaal.",
+      width: 4032,
+      height: 1471,
+      caption: "Het team van Agterbos Hoveniers in Oldenzaal.",
+    },
+    teamBus: {
+      src: "/img/team/team-bij-bus.jpg",
+      alt: "Het team van Agterbos Hoveniers.",
+      width: 4032,
+      height: 3024,
+      caption: "Het team van Agterbos Hoveniers.",
+    },
+    bij: {
+      src: "/img/onderhoud/bloei-bij.jpg",
+      alt: "Bloei in de tuin",
+      width: 5184,
+      height: 3456,
+      caption: "Bloei in de tuin",
+      credit: "Foto: Monique",
+    },
+    vlinder: {
+      src: "/img/onderhoud/vlinder.jpg",
+      alt: "Vlinder in de tuin",
+      width: 5184,
+      height: 3456,
+      caption: "Vlinder in de tuin",
+      credit: "Foto: Monique",
+    },
+    border: {
+      src: "/img/aanleg/border-met-objecten.jpg",
+      alt: "Tuin in Oldenzaal",
+      width: 2048,
+      height: 813,
+      caption: "Tuin in Oldenzaal",
+    },
+    bloei: {
+      src: "/img/projecten/bloeiende-border.jpg",
+      alt: "Bloei in de tuin",
+      width: 5184,
+      height: 3456,
+      caption: "Bloei in de tuin",
+    },
+    minigraver: {
+      src: "/img/aanleg/minigraver-aanleg.jpg",
+      alt: "Tuinaanleg",
+      width: 500,
+      height: 375,
+      caption: "Tuinaanleg",
+      native: true,
+    },
+    minigraver2: {
+      src: "/img/aanleg/minigraver-aanleg-2.jpg",
+      alt: "Tuinaanleg",
+      width: 500,
+      height: 375,
+      caption: "Tuinaanleg",
+      native: true,
+    },
+    sbb: {
+      src: "/img/badges/sbb-erkend-leerbedrijf.png",
+      alt: "SBB Erkend leerbedrijf",
+      width: 600,
+      height: 600,
+    },
+  },
+
+  mail: {
+    subject: "Vraag over tuinontwerp, aanleg of onderhoud",
+    concept:
+      "Dit is een concept van Sleads. Er wordt niets automatisch verstuurd. De knop opent uw eigen e-mailprogramma, met een bericht aan info@agterbos-hoveniers.nl. U past de tekst aan en verstuurt hem zelf.",
+  },
+
   footer: {
     kvk: "",
     socials: [
@@ -144,6 +514,6 @@ export const content = {
       },
     ],
   },
-};
+} as const;
 
 export type Content = typeof content;
